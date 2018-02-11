@@ -17,4 +17,3 @@
      formate: "d:h:m:s",
      // display: f,
    });`
- *  支持 d:h:m:s 和 h:m:s 两种显示模式。
