@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="countdown.js"></script>
+	<style type="text/css">
+		div > *{
+			text-decoration: none;
+			font-style: normal;
+		}
+	</style>
+</head>
+<body>
+	<div id="counter-obj"></div>
+	<div></div>
+	<div></div>
+</body>
+<script type="text/javascript">
+	new Countdown({
+		el: document.getElementsByTagName('div'),
+		endTime: "2018/2/10 24:00:00",
+		formate: "d:h:m:s",
+	});
+</script>
+
+</html>
