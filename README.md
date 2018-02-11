@@ -6,6 +6,7 @@
  *  支持到天数；
  *  支持选择HTMLElement,HTMLCollection,jQuery格式的对象；
  *  支持修改display方法；
+<<<<<<< HEAD
  *  支持`d:h:m:s` 和 `h:m:s` 两种显示模式。
  * 参数：指定目标元素(必填)，结束时间(必填)，开始时间(new Date())，分隔符(:)，时间显示样式("h:m:s")，自定义时间显示函数(简单样式和文字)
  * 使用范例：
@@ -17,3 +18,6 @@
      formate: "d:h:m:s",
      // display: f,
    });`
+=======
+ *  支持 d:h:m:s 和 h:m:s 两种显示模式。
+>>>>>>> feebed11bcb647e767ba365179fda9bcc4ea3849
