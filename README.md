@@ -6,4 +6,4 @@
  *  支持到天数；
  *  支持选择HTMLElement,HTMLCollection,jQuery格式的对象；
  *  支持修改display方法；
- *  支持d:h:m:s和h:m:s两种显示模式。
+ *  支持 d:h:m:s 和 h:m:s 两种显示模式。
