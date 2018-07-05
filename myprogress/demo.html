@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>进度条组件</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="progress.js"></script>
+  <style type="text/css">
+  #progress .progress {
+    background: grey;
+    height: 10px;
+  }
+
+  #progress .progress .bar {
+    background: orange;
+  }
+
+  .code {
+    background: #e5e5e5;
+    padding: 10px;
+  }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div>现在的数值是：<span class="current">0</span></div>
+    <h1>基于jQuery的进度条组件</h1>
+    <div id="progress"></div>
+    <ul>
+      <h2>说明</h2>
+      <li>需要在css中给.progress(背景)，.bar(进度条)设置一些显示样式才能显示。</li>
+      <li>语法：
+        <pre class="code">
+let obj = new Progress(document.getElementById('progress')[,options])
+        </pre>
+        <pre>
+options: let options = {
+  value: 0, //初始值
+  max: 1, //最大值
+  min: 0, // 最小值
+  labels: [], // 需要显示当前值的位置
+  labelFormat: function(val) { return val }, // 显示数值格式化
+  callback: null // 数值改变后的回调函数
+}
+        </pre>
+      </li>
+    </ul>
+  </main>
+  <div>现在的数值是：<span class="current">0</span></div>
+  <div>现在的数值是：<span class="current">0</span></div>
+</body>
+<script>
+let obj = new Progress(document.getElementById('progress'), {
+  labels: $('.current')
+})
+obj.setValue(0.47589)
+</script>
+
+</html>
