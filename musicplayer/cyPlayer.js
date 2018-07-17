@@ -1,30 +1,9 @@
 // let songsListJson = [{
 //   songName: 'You Are My Everything',
 //   singerName: 'Lexington Bridge',
-//   src: 'You Are My Everything.m4a',
+//   url: 'You Are My Everything.m4a',
 //   img: 'lexington-bridge-15.jpeg',
-// }, {
-//   songName: 'Wildest Dreams',
-//   singerName: 'Taylor Swift',
-//   src: 'Wildest Dreams.m4a',
-//   img: 'taylor-swift-1989-album-cover-and-promo-pictures-2014-_2.jpg',
-// }, {
-//   songName: 'Clean',
-//   singerName: 'Taylor Swift',
-//   src: 'Clean.m4a',
-//   img: 'taylor-swift-1989-album-cover-and-promo-pictures-2014-_2.jpg',
-// }, {
-//   songName: 'Look What You Made Me Do',
-//   singerName: 'Taylor Swift',
-//   src: 'Taylor+Swift+-+Look+What+You+Made+Me+Do.mp3',
-//   img: 'taylor-swift-look-what-you-made-me-do-screenshot-2017-billboard-1548.jpg',
-// }, {
-//   songName: 'Buring',
-//   singerName: 'Maria Arredondo',
-//   src: 'MariaArredondo.m4a',
-//   img: 'Maria-Arredondo.jpeg'
 // }]
-
 function cyPlayer(domEl, userPlayerList) {
   let $el = $(domEl),
     _this = this,
@@ -196,13 +175,13 @@ function cyPlayer(domEl, userPlayerList) {
     if (!song) return false
     _stop()
     // info
-    $el.find('.songImage img').attr('src', './asset/images/' + song.img)
-    $el.find('.bgImg').css({ 'backgroundImage': 'url(./asset/images/' + song.img + ')' })
+    $el.find('.songImage img').attr('src', song.img)
+    $el.find('.bgImg').css({ 'backgroundImage': 'url(' + song.img + ')' })
     $el.find('.song').text(song.songName)
     $el.find('.singer').text(song.singerName)
     song.like ? heartBtn.addClass('like') : heartBtn.removeClass('like')
     // audio
-    $(audio).find('source').attr('src', './asset/songs/' + song.src)
+    $(audio).find('source').attr('src', song.url)
     audio.load()
   }
   playList.on('click', 'li', (e) => {
