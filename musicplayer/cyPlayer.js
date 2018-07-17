@@ -1,35 +1,35 @@
-let songsListJson = [{
-  songName: 'You Are My Everything',
-  singerName: 'Lexington Bridge',
-  src: 'You Are My Everything.m4a',
-  img: 'lexington-bridge-15.jpeg',
-}, {
-  songName: 'Wildest Dreams',
-  singerName: 'Taylor Swift',
-  src: 'Wildest Dreams.m4a',
-  img: 'taylor-swift-1989-album-cover-and-promo-pictures-2014-_2.jpg',
-}, {
-  songName: 'Clean',
-  singerName: 'Taylor Swift',
-  src: 'Clean.m4a',
-  img: 'taylor-swift-1989-album-cover-and-promo-pictures-2014-_2.jpg',
-}, {
-  songName: 'Look What You Made Me Do',
-  singerName: 'Taylor Swift',
-  src: 'Taylor+Swift+-+Look+What+You+Made+Me+Do.mp3',
-  img: 'taylor-swift-look-what-you-made-me-do-screenshot-2017-billboard-1548.jpg',
-}, {
-  songName: 'Buring',
-  singerName: 'Maria Arredondo',
-  src: 'MariaArredondo.m4a',
-  img: 'Maria-Arredondo.jpeg'
-}]
+// let songsListJson = [{
+//   songName: 'You Are My Everything',
+//   singerName: 'Lexington Bridge',
+//   src: 'You Are My Everything.m4a',
+//   img: 'lexington-bridge-15.jpeg',
+// }, {
+//   songName: 'Wildest Dreams',
+//   singerName: 'Taylor Swift',
+//   src: 'Wildest Dreams.m4a',
+//   img: 'taylor-swift-1989-album-cover-and-promo-pictures-2014-_2.jpg',
+// }, {
+//   songName: 'Clean',
+//   singerName: 'Taylor Swift',
+//   src: 'Clean.m4a',
+//   img: 'taylor-swift-1989-album-cover-and-promo-pictures-2014-_2.jpg',
+// }, {
+//   songName: 'Look What You Made Me Do',
+//   singerName: 'Taylor Swift',
+//   src: 'Taylor+Swift+-+Look+What+You+Made+Me+Do.mp3',
+//   img: 'taylor-swift-look-what-you-made-me-do-screenshot-2017-billboard-1548.jpg',
+// }, {
+//   songName: 'Buring',
+//   singerName: 'Maria Arredondo',
+//   src: 'MariaArredondo.m4a',
+//   img: 'Maria-Arredondo.jpeg'
+// }]
 
-function cyPlayer(domEl) {
+function cyPlayer(domEl, userPlayerList) {
   let $el = $(domEl),
     _this = this,
     // 设置实体参数
-    songsList = songsListJson,
+    songsList = userPlayerList,
     // ------------------- create DOMs --------------------- //
     audio = $el.find('audio')[0] || $el.append('<audio preload="auto" autoplay="false" hidden"></audio>').find('audio')[0],
     // 播放Btn
@@ -179,11 +179,12 @@ function cyPlayer(domEl) {
     _changeSong()
   }
   prevBtn.on('click', _prev)
-  _next = () => {
+  _next = (click) => {
     indexNow = indexNow + 1 < songsList.length ? indexNow + 1 : 0
     _changeSong()
+    click ? _play() : ''
   }
-  nextBtn.on('click', _next)
+  nextBtn.on('click', function() { _next(true) })
   audio.onended = () => {
     _next()
     _play()
