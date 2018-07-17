@@ -232,7 +232,7 @@ function cyPlayer(domEl, userPlayerList) {
       listStr += `
     <li class="item">
       <div class="frame">
-        <img src="./asset/images/${song.img}">
+        <img src="${song.img}">
       </div>
       <p>${song.songName.toUpperCase()}</p>
     </li>`
@@ -244,7 +244,7 @@ function cyPlayer(domEl, userPlayerList) {
         listStr += `
     <li class="item">
       <div class="frame">
-        <img src="./asset/images/${song.img}">
+        <img src="${song.img}">
       </div>
       <p>${song.songName.toUpperCase()}</p>
     </li>`
