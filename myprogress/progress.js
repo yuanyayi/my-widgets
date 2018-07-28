@@ -8,6 +8,10 @@ function Progress(obj, ...opts) {
     labelFormat: function(val) { return val },
     callback: null
   }
+  if (!obj || obj.length === 0) {
+    console.error('试图在不存在的地方建立一个进度条。')
+    return
+  }
   // 初始化
   this.init = function() {
     $el = $(obj)
