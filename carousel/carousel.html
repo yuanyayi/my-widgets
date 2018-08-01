@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>无限轮播图组件DEMO</title>
+  <style type="text/css">
+    #my-carousel {
+      width: 400px;
+      height: 225px;
+      margin: auto;
+    }
+    #my-carousel img {
+      width: 100%;
+      height: 100%;
+    }
+    .carousel .next {
+      float: right;
+    }
+    .carousel .carousel-nav {
+      text-align: center;
+    }
+    .carousel .carousel-nav i+i {
+      margin-left: 10px;
+    }
+    .carousel .carousel-nav i:hover {
+      text-decoration: underline;
+    }
+    /* carousel固定、必须的样式 */
+    .carousel ul, .carousel ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .carousel .viewport {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel .itemlist {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel .itemlist .item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    } 
+    .carousel .prev, .carousel .next, .carousel .carousel-nav i{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="my-carousel" class="carousel">
+    <div class="viewport">
+      <ul class="itemlist">
+        <li class="item">
+          <img src="static/1.jpeg" alt="">
+        </li>
+        <li class="item">
+          <img src="static/2.jpeg" alt="">
+        </li>
+        <li class="item">
+          <img src="static/3.jpeg" alt="">
+        </li>
+        <li class="item">
+          <img src="static/4.jpeg" alt="">
+        </li>
+      </ul>
+    </div>
+    <ul>
+      <span class="prev">&lt;prev</span>
+      <span class="next">next&gt;</span>
+    </ul>
+  </div>  
+  <script src="jquery-1.11.1.min.js"></script>
+  <script src="carousel.js"></script>
+  <script type="text/javascript">
+    var cc = new Carousel($('#my-carousel'))
+  </script>
+</body>
+</html>
